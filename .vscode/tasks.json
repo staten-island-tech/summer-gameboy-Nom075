@@ -4,8 +4,17 @@
     {
       "label": "Build and Run in BGB",
       "type": "shell",
-      "command": "rgbasm -o main.o main.asm; rgblink -n game.sym -o game.gb main.o; rgbfix -v -p 0xFF game.gb; start C:/Users/liugr/Downloads/bgb/bgb.exe game.gb",
-      "group": { "kind": "build", "isDefault": true },
+      "command": "rgbasm -o main.o main.asm && rgblink -n game.sym -o game.gb main.o && rgbfix -v -p 0xFF game.gb && start C:/Users/liugr/Downloads/bgb/bgb.exe game.gb",
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/c"]
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "problemMatcher": []
     }
   ]
